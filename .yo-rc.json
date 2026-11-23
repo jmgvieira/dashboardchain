@@ -1,0 +1,18 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.13.0",
+    "sdksVersions": {},
+    "version": "1.18.2",
+    "libraryName": "dashboard-mainframe-jobs-spfx",
+    "libraryId": "86be7af2-b149-49c1-8fe7-d32f33836cca",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "dashboard-mainframe-jobs-spfx",
+    "solutionShortDescription": "Dashboard de cadeias mainframe",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

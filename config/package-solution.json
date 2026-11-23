@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "dashboard-mainframe-jobs-spfx-client-side-solution",
+    "id": "86be7af2-b149-49c1-8fe7-d32f33836cca",
+    "version": "0.1.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": { "name": "", "websiteUrl": "", "privacyUrl": "", "termsOfUseUrl": "", "mpnId": "Undefined-1.18.2" },
+    "metadata": {
+      "shortDescription": { "default": "Dashboard de cadeias mainframe" },
+      "longDescription": { "default": "Web part que mostra o arranque das cadeias de jobs mainframe a partir de um Excel numa biblioteca SharePoint." },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "dashboard-mainframe-jobs-spfx Feature",
+        "description": "Dashboard de cadeias mainframe",
+        "id": "4da1eddd-5af0-4a29-9f38-65103544a621",
+        "version": "0.1.0.0"
+      }
+    ]
+  },
+  "paths": { "zippedPackage": "solution/dashboard-mainframe-jobs-spfx.sppkg" }
+}

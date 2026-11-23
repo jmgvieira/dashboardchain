@@ -1,0 +1,122 @@
+// As variáveis ficam na classe raiz (CSS modules não aceitam :root).
+.dashboard {
+  --dmj-texto: #242424;
+  --dmj-texto-2: #616161;
+  --dmj-texto-3: #8a8886;
+  --dmj-superficie: #ffffff;
+  --dmj-borda: #e1dfdd;
+  --dmj-borda-forte: #c8c6c4;
+  --dmj-acento: #0f6cbd;
+
+  --dmj-ok: #107c10;        --dmj-ok-fundo: #f1faf1;        --dmj-ok-borda: #9fd89f;
+  --dmj-atrasado: #8a6d00;  --dmj-atrasado-fundo: #fefbe6;  --dmj-atrasado-borda: #f2d96b;
+  --dmj-critico: #c43e00;   --dmj-critico-fundo: #fff5ee;   --dmj-critico-borda: #f4a77f;
+  --dmj-falta: #c50f1f;     --dmj-falta-fundo: #fdf3f4;     --dmj-falta-borda: #eeacb2;
+  --dmj-pendente: #8a8886;  --dmj-pendente-fundo: #ffffff;  --dmj-pendente-borda: #c8c6c4;
+
+  font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  color: var(--dmj-texto);
+  box-sizing: border-box;
+
+  * { box-sizing: border-box; }
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho { display: flex; align-items: center; gap: 16px; background: var(--dmj-superficie); border: 1px solid var(--dmj-borda); border-radius: 8px; padding: 16px 20px; }
+.cabecalhoTitulo { flex: 1; min-width: 0; }
+.cabecalhoTitulo h1 { font-size: 20px; font-weight: 600; margin: 0 0 2px; }
+.cabecalhoSub { color: var(--dmj-texto-2); font-size: 13px; }
+.cabecalhoFicheiro { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--dmj-texto-2); }
+.cabecalhoFicheiro select { font: inherit; font-size: 14px; color: var(--dmj-texto); padding: 6px 10px; border: 1px solid var(--dmj-borda-forte); border-radius: 4px; background: #fff; min-width: 220px; }
+
+/* ---------- Mascote ---------- */
+.mascote { width: 64px; height: 64px; flex: none; }
+.mascoteOlho { animation: dmjPiscar 5s infinite; transform-origin: center; transform-box: fill-box; }
+.mascoteLed { animation: dmjLed 1.2s infinite alternate; }
+.mascoteLed:nth-child(2) { animation-delay: .4s; }
+.mascoteLed:nth-child(3) { animation-delay: .8s; }
+@keyframes dmjPiscar { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
+@keyframes dmjLed { from { opacity: .35; } to { opacity: 1; } }
+
+/* ---------- Seletor de dias ---------- */
+.dias { display: flex; align-items: center; gap: 12px; margin: 16px 0; flex-wrap: wrap; }
+.diasLista { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+.dia { font: inherit; border: 1px solid var(--dmj-borda); background: var(--dmj-superficie); border-radius: 6px; padding: 4px 0; width: 48px; cursor: pointer; display: flex; flex-direction: column; align-items: center; line-height: 1.2; color: var(--dmj-texto); }
+.dia:hover { border-color: var(--dmj-borda-forte); }
+.diaSemana { font-size: 11px; color: var(--dmj-texto-2); }
+.diaNum { font-size: 15px; font-weight: 600; }
+.diaPonto { width: 6px; height: 6px; border-radius: 50%; margin-top: 2px; }
+.diaSel { background: var(--dmj-acento); border-color: var(--dmj-acento); color: #fff; }
+.diaSel .diaSemana { color: #e6f0fb; }
+.diaHoje { border-color: var(--dmj-acento); }
+.diasAtalhos { display: flex; gap: 6px; }
+.botao { font: inherit; font-size: 13px; border: 1px solid var(--dmj-borda-forte); background: var(--dmj-superficie); border-radius: 4px; padding: 5px 12px; cursor: pointer; color: var(--dmj-texto); }
+.botao:hover { background: #f3f2f1; }
+.diasDica { width: 100%; font-size: 12px; color: var(--dmj-texto-3); }
+
+/* ---------- KPIs ---------- */
+.kpis { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.kpi { background: var(--dmj-superficie); border: 1px solid var(--dmj-borda); border-left: 4px solid var(--dmj-borda-forte); padding: 12px 14px; }
+.kpiRotulo { font-size: 12px; color: var(--dmj-texto-2); }
+.kpiValor { font-size: 26px; font-weight: 600; line-height: 1.2; }
+.kpiExtra { font-size: 12px; color: var(--dmj-texto-3); }
+.kpiOk { border-left-color: var(--dmj-ok); }
+.kpiAtrasado { border-left-color: var(--dmj-atrasado-borda); }
+.kpiFalta { border-left-color: var(--dmj-falta); }
+.kpiPendente { border-left-color: var(--dmj-pendente); }
+
+/* ---------- Secções ---------- */
+.seccao { background: var(--dmj-superficie); border: 1px solid var(--dmj-borda); border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; }
+.seccaoTitulo { display: flex; align-items: baseline; gap: 12px; margin: 0 0 12px; }
+.seccaoTitulo h2 { font-size: 16px; font-weight: 600; margin: 0; }
+.seccaoTitulo span { color: var(--dmj-texto-2); font-size: 13px; }
+
+/* ---------- Grelha de arranques ---------- */
+.grelha { display: grid; grid-template-columns: 90px repeat(3, minmax(0, 1fr)); gap: 8px; align-items: stretch; }
+.grelhaCab { font-size: 12px; color: var(--dmj-texto-2); text-align: center; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.grelhaInst { font-weight: 600; display: flex; align-items: center; }
+.corCadeia { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.mosaico { border: 1px solid; border-radius: 6px; padding: 8px 12px; display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 8px; min-height: 58px; }
+.mosaicoHora { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--dmj-texto); }
+.mosaicoDesvio { font-size: 13px; font-weight: 600; text-align: right; }
+.mosaicoHab { font-size: 12px; color: var(--dmj-texto-2); grid-column: 1 / -1; }
+
+/* ---------- Estados (partilhados por mosaico, matriz e legenda) ---------- */
+.estadoOk { background: var(--dmj-ok-fundo); border-color: var(--dmj-ok-borda); color: var(--dmj-ok); }
+.estadoAtrasado { background: var(--dmj-atrasado-fundo); border-color: var(--dmj-atrasado-borda); color: var(--dmj-atrasado); }
+.estadoCritico { background: var(--dmj-critico-fundo); border-color: var(--dmj-critico-borda); color: var(--dmj-critico); }
+.estadoFalta { background: var(--dmj-falta-fundo); border-color: var(--dmj-falta-borda); color: var(--dmj-falta); }
+.estadoPorIniciar { background: var(--dmj-pendente-fundo); border-color: var(--dmj-pendente-borda); border-style: dashed; color: var(--dmj-pendente); }
+.estadoPorIniciar .mosaicoHora, .estadoFalta .mosaicoHora { color: inherit; }
+
+/* ---------- Linha do tempo ---------- */
+.timeline { width: 100%; height: auto; display: block; }
+.pulsar { animation: dmjPulsar 1.6s infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes dmjPulsar { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+/* ---------- Matriz histórico ---------- */
+.matrizWrap { overflow-x: auto; }
+.matriz { border-collapse: separate; border-spacing: 3px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.matriz th { font-weight: 400; color: var(--dmj-texto-2); padding: 2px 4px; white-space: nowrap; }
+.matriz th.matrizHoje { color: var(--dmj-acento); font-weight: 600; }
+.matrizNome { text-align: left; padding-right: 12px; white-space: nowrap; position: sticky; left: 0; background: var(--dmj-superficie); }
+.matrizPrimeira td { border-top: 1px solid var(--dmj-borda); }
+.celula { min-width: 52px; text-align: center; padding: 5px 4px; border-radius: 4px; border: 1px solid; }
+.matriz td.estadoOk { background: #f6f6f6; border-color: #f6f6f6; color: var(--dmj-texto); }
+
+/* ---------- Legenda e estados gerais ---------- */
+.legenda { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--dmj-texto-2); }
+.legendaItem { display: flex; align-items: center; gap: 6px; }
+.legendaAmostra { width: 14px; height: 14px; border-radius: 3px; border: 1px solid; }
+.carregar { padding: 40px; text-align: center; color: var(--dmj-texto-2); }
+.erro { padding: 16px 20px; border: 1px solid var(--dmj-falta-borda); background: var(--dmj-falta-fundo); color: var(--dmj-falta); border-radius: 8px; margin-bottom: 16px; }
+
+@media (max-width: 800px) {
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grelha { grid-template-columns: 70px repeat(3, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascoteOlho, .mascoteLed, .pulsar { animation: none; }
+}
